@@ -3,6 +3,7 @@ services:
   nodejs:
     build: 
       context: .
+    restart: always
     image: amakundu/nodejs-mysql-app
     networks:
       - frontend
@@ -15,7 +16,7 @@ services:
     volumes:
       - ./:/var/www/html/
     ports:
-      - "30001:8005"
+      - "30003:8005"
     container_name: nodejs-app
   mysql:
     image: mysql:5.7
