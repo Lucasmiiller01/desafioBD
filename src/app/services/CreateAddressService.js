@@ -1,8 +1,6 @@
-import AddressRepository from "../repositories/AddressRepository";
-
 class CreateAddressService {
-  constructor(){
-    this.addressRepository = new AddressRepository();
+  constructor(addressRepository){
+    this.addressRepository = addressRepository;
   }
 
   async execute({ cep, street }){

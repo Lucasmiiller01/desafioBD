@@ -1,9 +1,7 @@
-import CustomerRepository from "../repositories/CustomerRepository";
 import AppError from "../shared/errors/AppError";
-
 class FindCustomerService {
-  constructor(){
-    this.customerRepository = new CustomerRepository();
+  constructor(customerRepository){
+    this.customerRepository = customerRepository;
   }
 
   async execute(email){
