@@ -1,4 +1,5 @@
 [![desafio banco original](https://i1.wp.com/sonhoseguro.com.br/wp-content/uploads/2019/09/Captura-de-Tela-2019-09-18-%C3%A0s-09.08.06.png)](#)
+
 # Descricao do desafio
 
 Criar projeto REST de cadastro de cliente
@@ -8,7 +9,7 @@ Criar projeto REST de cadastro de cliente
 - Javascript
 - [Node.js](https://nodejs.org)
 - [Docker](https://www.docker.com)
-
+- [JEST](https://jestjs.io/pt-BR/)
 
 # Execução do Projeto com docker
 
@@ -25,10 +26,9 @@ Na pasta do projeto, execute o comando:
 ```
 
 ```
-URL para acessar o app: [http://localhost:30003](http://localhost:30003) 
-URL para acessar o phpMyAdmin: [http://localhost:30002](http://localhost:30002) 
+URL para acessar o app: [http://localhost:30003](http://localhost:30003)
+URL para acessar o phpMyAdmin: [http://localhost:30002](http://localhost:30002)
 ```
-
 
 # Execução do Projeto sem docker
 
@@ -38,6 +38,18 @@ Para execução deste projeto com NPM, será necessário ter o [Node](https://no
 então tenha certeza que o tenha instalado localmente.
 
 Primeiramente clone este repositório.
+Feito isso é necessário configurar o arquivo .ENV com a config do banco
+
+```
+Examplo:
+
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASS=
+MYSQL_DB=bancodgbd
+
+```
+
 Na pasta do projeto, execute o comando:
 
 ```
@@ -53,6 +65,22 @@ Logo após a finalizaçâo da instalação, execute o comando:
 npm start  ou  yarn start
 
 ```
-URL para acessar o app: [http://localhost:8005](http://localhost:8005) 
+
+URL para acessar o app: [http://localhost:8005](http://localhost:8005)
+
+```
+
+```
+
+#### - API Swagger
+
+```
+rota para acessar o swagger: /api-docs
+```
+
+#### - Executando os TESTES
+
+```
+npm run test ou yarn test
 
 ```
