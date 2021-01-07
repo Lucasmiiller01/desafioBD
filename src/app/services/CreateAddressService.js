@@ -7,7 +7,6 @@ class CreateAddressService {
 
   async execute({ cep, street }){
     const address = await this.addressRepository.create({ cep, street });
-
     return address;
 
   }

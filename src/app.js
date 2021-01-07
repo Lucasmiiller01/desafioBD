@@ -29,6 +29,16 @@ class App {
           message: err.message
         })
       }
+      else if(err.name === "ValidationError") {
+        console.log(err);
+
+        return res.status(400).json({
+          status:  "error",
+          message: err.errors
+        })
+      }
+
+
       return res.status(500).json({
         status: "error",
         message: "Erro não insperado !"
