@@ -5,6 +5,7 @@ const customersRouter = Router();
 
 
 customersRouter.post('/', CustomerController.create);
+//customersRouter.get('/:email', CustomerController.index);
 
 
 export default customersRouter;

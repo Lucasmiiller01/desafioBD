@@ -21,7 +21,7 @@ module.exports = {
       },
       address_id:  {
         type: Sequelize.INTEGER,
-        references: { model: 'adresses', key: 'id' },
+        references: { model: 'addresses', key: 'id' },
         allowNull: false,
       },
       created_at: {
