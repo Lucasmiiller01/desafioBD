@@ -1,82 +1,82 @@
 {
-    "swagger": "2.0",
-    "info": {
-        "title": "Banco Original API",
-        "description": "API desenvolvida no teste técnico para dev do BO",
-        "version": "1.0"
-    },
-    "paths": {
-        "/customers": {
-            "post": {
-                "x-swagger-router-controller": "customers",
-                "operationId": "create",
-                "tags": [
-                    "/customers"
-                ],
-                "description": "Route to create customer",
-                "parameters": [
-                    {
-                        "name": "customer",
-                        "in": "body",
-                        "description": "The customer to create.",
-                        "required": true,
-                        "schema": {
-                            "type": "object",
-                            "required": [
-                                "email",
-                                "cpf",
-                                "cep"
-                            ],
-                            "properties": {
-                                "email": {
-                                    "type": "string",
-                                    "required": true
-                                },
-                                "cpf": {
-                                    "type": "integer",
-                                    "required": true,
-                                    "maxLength": 11,
-                                    "minLength": 11
-                                },
-                                "cep": {
-                                    "type": "integer",
-                                    "required": true,
-                                    "maxLength": 8,
-                                    "minLength": 8
-                                }
-                            }
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "A JSON object containing customer information"
-                    }
+  "swagger": "2.0",
+  "info": {
+    "title": "Banco Original API",
+    "description": "API desenvolvida no teste técnico para dev do BO",
+    "version": "1.0"
+  },
+  "paths": {
+    "/customers": {
+      "post": {
+        "x-swagger-router-controller": "customers",
+        "operationId": "create",
+        "tags": [
+          "/customers"
+        ],
+        "description": "Route to create customer",
+        "parameters": [
+          {
+            "name": "customer",
+            "in": "body",
+            "description": "The customer to create.",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "required": [
+                "email",
+                "cpf",
+                "cep"
+              ],
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "required": true
+                },
+                "cpf": {
+                  "type": "integer",
+                  "required": true,
+                  "maxLength": 11,
+                  "minLength": 11
+                },
+                "cep": {
+                  "type": "integer",
+                  "required": true,
+                  "maxLength": 8,
+                  "minLength": 8
                 }
+              }
             }
-        },
-        "/customers/{email}": {
-            "get": {
-                "x-swagger-router-controller": "customers",
-                "operationId": "findByEmail",
-                "tags": [
-                    "/customers/{email}"
-                ],
-                "description": "customer search by email",
-                "parameters": [
-                    {
-                        "name": "email",
-                        "in": "path",
-                        "description": "The email for search.",
-                        "required": true
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "A JSON object containing customer information"
-                    }
-                }
-            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "A JSON object containing customer information"
+          }
         }
+      }
+    },
+    "/customers/{email}": {
+      "get": {
+        "x-swagger-router-controller": "customers",
+        "operationId": "findByEmail",
+        "tags": [
+          "/customers/{email}"
+        ],
+        "description": "customer search by email",
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "description": "The email for search.",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object containing customer information"
+          }
+        }
+      }
     }
+  }
 }
